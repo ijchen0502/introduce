@@ -1,0 +1,95 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#myCanvas {
+  border: 5px solid aqua;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#myScore,
+#myScore2 {
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px;
+  margin-top: 1rem;
+}
+
+#start {
+  padding: 0.25rem 0.5rem;
+  background-color: lightgreen;
+  font-size: 1.15rem;
+  display: block;
+  margin-top: 15px;
+}
+
+/* 新增：右下角資訊按鈕 */
+.info-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background-color: lightgreen;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.info-btn:hover {
+  background-color: #2980b9;
+}
+
+/* 新增：彈出視窗 */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color: #272727;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: none; /* 初始隱藏 */
+  z-index: 1100;
+}
+
+.popup-content {
+  position: relative;
+}
+.popup-content ul {
+  padding-left: 10px;
+  margin-left: 15px;
+  line-height: 1.5; /* 增加行距 */
+  font-size: 0.95rem; /* 調整文字大小 */
+}
+
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #e74c3c;
+  transition: color 0.3s;
+}
+
+.popup .close:hover {
+  color: #ff6b6b;
+}/*# sourceMappingURL=style.css.map */

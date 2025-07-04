@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>貪食蛇遊戲</title>
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="480"
+      height="480"
+      style="background-color: black"
+    ></canvas>
+    <p id="myScore"></p>
+    <p id="myScore2"></p>
+    <button type="button" id="start" onclick="location.reload()">
+      開始遊戲
+    </button>
+
+    <!-- 遊戲資訊按鈕 -->
+    <button class="info-btn" id="infoButton">遊戲資訊</button>
+
+    <!-- 彈出視窗 -->
+    <div class="popup" id="infoPopup">
+      <div class="popup-content">
+        <span class="close">&times;</span>
+        <h2>遊戲設計過程</h2>
+        <p>這是一個基於 HTML Canvas 的貪食蛇遊戲，主要功能包括：</p>
+        <ul>
+          <li>上下左右控制移動</li>
+          <li>穿牆模式</li>
+          <li>分數與歷史最高分數紀錄</li>
+          <li>果實生成邏輯優化</li>
+        </ul>
+
+        <h3>困難點：</h3>
+        <p>
+          <strong>問題：</strong>
+          addEventListener接收速度快於蛇更新的速度，導致頭咬頭現象發生。
+        </p>
+        <p>
+          <strong>原因：</strong> 當玩家快速按下兩次相反方向鍵（例如：右 → 上 →
+          左），
+          addEventListener會迅速更新兩次方向，而蛇的頭部尚未移動到下一個格子，從而導致
+          蛇頭直接撞到自己的身體，觸發遊戲結束。
+        </p>
+        <p>
+          <strong>解決方法：</strong>
+          在每一幀更新後，僅允許方向變更一次，以避免短時間內快速變更方向。
+        </p>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
